@@ -1,0 +1,16 @@
+## Componentes de tipo Container
+son los componentes que contienen la logica y los datos.
+
+## nuestra app (aplicacion para gestionar tipos de tareas)
+tendra un menu lateral/ pintando diferenteres rutas para navegar
+cuadro central el contenido principal/ conciste en un cuadro de tareas.
+/continuar ... 36:46
+
+## estrategia de desarrollo
+1° empezamos por componentes mayores y cuando se detecta que varios
+elementos se estan repitiendo se  saca un componente del mismo
+2° De abajo hacia arriba
+
+## PROPS
+pueden ser datos primitivos, complejos o funciones
+pueden pasar cualquier tipo de dato
