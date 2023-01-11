@@ -14,3 +14,10 @@ elementos se estan repitiendo se  saca un componente del mismo
 ## PROPS
 pueden ser datos primitivos, complejos o funciones
 pueden pasar cualquier tipo de dato
+
+## ESTILO AL PROYECTO
+
+vamos a trabajar con css y sass instalando las dependencias: 
+ejemplo [npm i --save node-sass] 
+'save' para que no se nos añada a la dependecias dentro del PROYECTO
+

@@ -15,7 +15,7 @@ const TasklistComponent = () => {
 
   useEffect(() => {
     console.log('task state has been modified')
-    setLoading(false)
+    setLoading(false);
     return () => {
       console.log('TaskListComponent is goin to unmount')
     }

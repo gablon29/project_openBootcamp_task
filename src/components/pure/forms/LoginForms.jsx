@@ -14,7 +14,10 @@ const LoginForms = () => {
         }
     ]
 
+    //creamos un estado a traves del useState para que podemos hacer uso del estado y datos
     const [credentials, setCredentials] = useState(initialCredentials)
+
+
 
   return (
     <div>

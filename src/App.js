@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import TasklistComponent from './components/container/task_list';
+import GreetingStyle from './components/pure/forms/GreetingStyle';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </a> */}
         {/** COMPONENTE de listado de tarea */}
         {/* <TasklistComponent /> */}
+        <GreetingStyle />
       </header>
     </div>
   );
