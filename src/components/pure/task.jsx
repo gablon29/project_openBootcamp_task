@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Task } from '../../models/task.class'
+import { LEVELS } from '../../models/levels.num';
 
 function TaskComponent({ task }) {
   
@@ -11,7 +12,44 @@ function TaskComponent({ task }) {
     return () => {
       console.log(`Task: ${task.name} is goin to unmount`)
     }
-  },[task])
+  }, [task]);
+  
+
+  const taskLevelBadge = () => {
+  switch (task.level) {
+    case LEVELS.NORMAL: 
+      return (
+        <h6>
+          <span className='badge bg-primary'>{task.level}</span>
+        </h6>
+      )
+    case LEVELS.URGENTE:
+      return (
+        <h6>
+          <span className='badge bg-warning'>{task.level}</span>
+          </h6>
+      )
+    case LEVELS.BLOCKING:
+      return (
+        <h6>
+          <span className='badge bg-danger'>{task.level}</span>
+        </h6>
+      )
+  
+    default:
+      break;
+  }
+  }
+  
+  const taskCompletedIcon = () => {
+    if (task.completed) {
+      return (<i className='bi-toggle-on' style={{ color: 'green', fontWeight: 'bold' }}></i>)
+    }
+    else {
+      return (<i className='bi-toggle-off' style={{ color: 'grey' }}></i>)
+
+    }
+  }
 
   return (
 
@@ -23,38 +61,17 @@ function TaskComponent({ task }) {
         <span>{task.descripcion}</span>
       </td>
       <td className='align-middle'>
-        {/* TODO: sustituir por un badge */}
-        <span>{task.level}</span>
+        {/* EXECUTION of function badge element */}
+        {taskLevelBadge()}
       </td>
       <td className='align-middle'>
-        {/* TODO: sustituir por un iconos */}
-        {task.completed ? (<i className='bi-toggle-on' style={{ color: 'green', fontWeight: 'bold' }}></i>)
-          : (<i className='bi-toggle-off' style={{ color: 'grey' }}></i>)}
-
-        <span>{task.completed ? 'Completed' : 'Pending'}</span>
+        {/* Execution of function to return depending on complition  */}
+        {taskCompletedIcon()}
+        <i className='bi-trash' style={{
+          color: 'tomato', fontSize: '20px' }}></i>
       </td>
     </tr>
 
-        
-
-    
-
-
-    // <div>
-    //       <h2>
-    //         Nombre:   {task.name}
-    //       </h2>
-    //       <h3>
-    //           Descripcion: 
-    //           {task.descripcion}
-    //       </h3>
-    //       <h4>
-    //           Level: {task.level}
-    //       </h4>
-    //       <h5>
-    //           This task is: { task.completed ? 'COMPLETED' : 'PENDING' }
-    //       </h5>
-    // </div>
   )
 }
 

@@ -5,10 +5,12 @@ import TaskComponent from '../pure/task'
 
 const TasklistComponent = () => {
 
-  const defaultTask = new Task('Example', 'Default descripcion', false, LEVELS.NORMAL)
+  const defaultTask1 = new Task('Example1', 'Descripcion1', true, LEVELS.NORMAL)
+  const defaultTask2 = new Task('Example2', 'Descripcion2', false, LEVELS.URGENTE)
+  const defaultTask3 = new Task('Example3', 'Descripcion3', false, LEVELS.BLOCKING)
   
   // fijamos el estado del componente
-  const [task, setTask] = useState([defaultTask])
+  const [task, setTask] = useState([defaultTask1, defaultTask2, defaultTask3])
   // añadimos otro state para el estado de carga de la tarea
   const [loading, setLoading] = useState(true)
 
@@ -49,8 +51,15 @@ const TasklistComponent = () => {
                 </tr>
               </thead>
               <tbody>
+                {task.map((task, index) => {
+                  return (
+                    <TaskComponent
+                      key={index}
+                      task={task} />
+                  )
+                })}
+
                 {/* iterar sobre una lista de tareas */}
-                <TaskComponent task={defaultTask} />
               </tbody>
           
               </table>  
