@@ -14,21 +14,47 @@ function TaskComponent({ task }) {
   },[task])
 
   return (
-    <div>
-          <h2>
-            Nombre:   {task.name}
-          </h2>
-          <h3>
-              Descripcion: 
-              {task.descripcion}
-          </h3>
-          <h4>
-              Level: {task.level}
-          </h4>
-          <h5>
-              This task is: { task.completed ? 'COMPLETED' : 'PENDING' }
-          </h5>
-    </div>
+
+    <tr className='fw-normal'>
+      <th>
+        <span className='ms-2'>{task.name}</span>
+      </th>
+      <td className='align-middle'>
+        <span>{task.descripcion}</span>
+      </td>
+      <td className='align-middle'>
+        {/* TODO: sustituir por un badge */}
+        <span>{task.level}</span>
+      </td>
+      <td className='align-middle'>
+        {/* TODO: sustituir por un iconos */}
+        {task.completed ? (<i className='bi-toggle-on' style={{ color: 'green', fontWeight: 'bold' }}></i>)
+          : (<i className='bi-toggle-off' style={{ color: 'grey' }}></i>)}
+
+        <span>{task.completed ? 'Completed' : 'Pending'}</span>
+      </td>
+    </tr>
+
+        
+
+    
+
+
+    // <div>
+    //       <h2>
+    //         Nombre:   {task.name}
+    //       </h2>
+    //       <h3>
+    //           Descripcion: 
+    //           {task.descripcion}
+    //       </h3>
+    //       <h4>
+    //           Level: {task.level}
+    //       </h4>
+    //       <h5>
+    //           This task is: { task.completed ? 'COMPLETED' : 'PENDING' }
+    //       </h5>
+    // </div>
   )
 }
 
