@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import TasklistComponent from './components/container/task_list';
 import GreetingStyle from './components/pure/forms/GreetingStyle';
+import Father from './components/container/Father';
 
 function App() {
   return (
@@ -20,9 +21,11 @@ function App() {
           Learn React
         </a> */}
         {/** COMPONENTE de listado de tarea */}
-        <TasklistComponent />
+        {/* <TasklistComponent /> */}
         {/* <GreetingStyle /> */}
       {/* </header> */}
+      {/* //* gestion de eventos */}
+      <Father/>
     </div>
     
   );
