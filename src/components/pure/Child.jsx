@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
-const Child = ({ name }) => {
+
+const Child = ({ name, send }) => {
+
+  const messageRef = useRef('');
     
-    const pressButtonTwo = () => {
-        alert(`hello`);
+  const pressButtonTwo = () => {
+    const content = messageRef.current.value;
+        alert(`Content: ${content}`);
     }
     
     const pressButtonThree = (text) => {
@@ -19,7 +23,15 @@ const Child = ({ name }) => {
           <button onClick={pressButtonTwo}>Press Button Two
           </button>
           <button onClick={() => pressButtonThree('gabriel')}>Press Button Three
-          </button>
+      </button>
+      <input placeholder='insert text'
+        onFocus={() => console.log('Input Focused')}
+        onChange={(e) => console.log('Input Change:', e.target.value)}
+        onCopy={() => console.log('Copied text from Input')} 
+        ref={messageRef}
+        /> 
+
+      <button onClick={() => send('Hello Papi')}/>
     </div>
   )
 }

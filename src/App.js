@@ -3,6 +3,8 @@ import './App.css';
 import TasklistComponent from './components/container/task_list';
 import GreetingStyle from './components/pure/forms/GreetingStyle';
 import Father from './components/container/Father';
+import PruebaApp from './components/PruebaUseRef';
+
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
       {/* </header> */}
       {/* //* gestion de eventos */}
       <Father/>
+      {/* //* Prueba del useRef */}
+      {/* <PruebaApp/> */}
     </div>
     
   );
